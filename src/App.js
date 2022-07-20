@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import productsData from "./data.json"
 import MainPage from './components/MainPage/MainPage';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const { products } = productsData;
@@ -33,6 +34,7 @@ function App() {
     }
   };
   return (
+
     <Router>
       <Header
         countCartItems={cartItems.length}
@@ -44,6 +46,7 @@ function App() {
         <Route exact path='/' element={<MainPage />} />
         <Route exact path='mainShop' element={<Main products={products} onAdd={onAdd} />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
