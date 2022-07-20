@@ -1,0 +1,93 @@
+.navigation{
+    background-color: #77b1a3;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 0;
+    
+}
+.logo{
+    width: 130px;
+    cursor: pointer;
+    margin: 15px 200px;
+}
+.cartBtn{
+    border: none;
+    background-color: rgba(107, 107, 107, 0);
+    font-size: 20px;
+    float: right;
+    margin: 15px 16% 20px 0;
+    color: white;
+}
+.cartBtn:hover{
+    background-color: #beccbf;
+    border-radius: 50%;
+    padding: 7px 13px 7px 13px;
+    transition: 0.3s;
+}
+.cartCloseBtn {
+    margin: 2% 2% 2% 90% !important;
+    padding: 1% !important;
+}
+.cartHeader {
+    text-align: center;
+    padding-bottom: 3%;
+}
+.cartHeaderEmpty {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 5%;
+}
+.productName {
+    padding: 1%;
+    margin: 1% 0 0 5% !important;
+    background-color: rgba(191, 191, 191, 0.266);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.164);
+}
+.qntBtn {
+    padding-top: 3%;
+    margin-right: 8%;
+    display: flex;
+}
+.qntBtnMinus {
+    background-color: rgba(187, 82, 82, 0.649);
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+    margin-right: 5px;
+}
+.qntBtnPlus {
+    background-color: rgba(203, 203, 203, 0.649);
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+.productPrice {
+    padding-top: 3%;
+}
+.itemPrice {
+    margin-left: 2% !important;
+    font-size: 17px ;
+    padding-bottom: 1%;
+}
+.itemPriceAmount {
+    margin-left: 2% !important;
+    font-size: 25px;
+    padding-bottom: 5%;
+    text-decoration: underline;
+}
+.buyBtn{
+    background-color: rgba(208, 84, 17, 0.84) !important;
+    width: 30%;
+    margin: -2% 0 3% 63%;
+    padding: 2%;
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+.buyBtn:hover{
+    background-color: rgba(208, 84, 17, 0.992) !important;
+}
