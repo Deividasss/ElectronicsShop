@@ -4,7 +4,7 @@ import { Modal, Button } from 'react-bootstrap';
 import { useState } from 'react';
 import "../Header/Header.scss"
 import { useNavigate } from 'react-router-dom';
-import { FaShoppingCart, FaBars, } from 'react-icons/fa';
+import { FaShoppingCart, FaBars, FaRegUser } from 'react-icons/fa';
 
 export default function Header(props) {
   const [modal, setModal] = useState(false)
@@ -29,6 +29,7 @@ export default function Header(props) {
             <img className='logo' src="https://resi.store/img/logo-inverse.png"></img>
           </a>
           <button className="cartBtn" onClick={openModal}><FaShoppingCart /></button>
+          <a onClick={()=>alert("Prisijungimas negalimas")} className='userBtn'><FaRegUser /><p className='userBtnText'>Registruotis/<br/>Prisijungti</p></a>
         </div>
         <Modal size="lg" show={modal} aria-labelledby="contained-modal-title-vcenter"
           centered>
@@ -36,7 +37,7 @@ export default function Header(props) {
             type="button"
             className="cartCloseBtn btn-close"
             onClick={hideModal}
-            variant="danger"
+            variant="none"
           ></Button>
           <div className='modalas'>
             <h2 className='cartHeader'>----------Jūsų Prekių Krepšelis----------</h2>
@@ -82,7 +83,7 @@ export default function Header(props) {
                   </div>
                 </div>
                 <div >
-                  <button className='buyBtn' onClick={() => alert('AČIŪ, KAD PIRKOTE!')}>
+                  <button className='buyBtn' onClick={() => {navigate("shippingForm"); hideModal()}}>
                     PRADĖTI PIRKIMĄ
                   </button>
                 </div>

@@ -3,6 +3,7 @@ import "../Product/Product.scss"
 import { FaStar, FaHeart, FaSearch, FaShoppingCart } from 'react-icons/fa';
 import { Modal, Button } from 'react-bootstrap';
 import { useState } from 'react';
+import { NotificationContainer, NotificationManager } from 'react-notifications';
 
 export default function Product(props) {
   const { product, onAdd } = props;
@@ -16,6 +17,11 @@ export default function Product(props) {
   const hideModal = () => {
     setModal(false)
   }
+
+  const success = () => {
+    NotificationManager.success('Prekė sėkmingai pridėta į krepšelį!', '---------- ResiStore ----------');
+  }
+
   return (
     <>
       <div class="col-md-3 ">
@@ -27,7 +33,7 @@ export default function Product(props) {
             <span class="product-hot-label">Hot</span>
             <ul class="product-links">
               <li><a data-tip="Add to Wishlist"><i>{<FaHeart />}</i></a></li>
-              <li><a onClick={() => onAdd(product)} data-tip="Add To Cart"><i>{<FaShoppingCart />}</i></a></li>
+              <li><a onClick={() => {onAdd(product); success()}} data-tip="Add To Cart"><i>{<FaShoppingCart />}</i></a></li>
               <li><a href={product.image} data-tip="Quick View"><i>{<FaSearch />}</i></a></li>
             </ul>
           </div>
@@ -81,15 +87,14 @@ export default function Product(props) {
                   </div>
                   <div class="product-bottom">
                     <div class="product-checkout">
-                      Total Price
                       <div class="product-checkout-total">
                         <div class="product-checkout-total-amount">
-                          {product.price}$
+                          {product.price}$/vnt.
                         </div>
                       </div>
                     </div>
                     <div class="product-checkout-actions">
-                      <Button onClick={() => { onAdd(product); hideModal() }} className="addToCartBtn" variant="dark">Add To Cart</Button>
+                      <Button onClick={() => { onAdd(product); hideModal(); success() }} className="addToCartBtn" variant="dark">Į KREPŠELĮ</Button>
                     </div>
                   </div>
                 </div>

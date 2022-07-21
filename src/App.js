@@ -5,6 +5,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import productsData from "./data.json"
 import MainPage from './components/MainPage/MainPage';
 import Footer from './components/Footer/Footer';
+import 'react-notifications/lib/notifications.css';
+import { NotificationContainer } from 'react-notifications';
+import ShippingForm from './components/ShippingForm/ShippingForm';
 
 function App() {
   const { products } = productsData;
@@ -45,8 +48,14 @@ function App() {
       <Routes>
         <Route exact path='/' element={<MainPage />} />
         <Route exact path='mainShop' element={<Main products={products} onAdd={onAdd} />} />
+        <Route exact path='shippingForm' element={<ShippingForm
+          onAdd={onAdd}
+          onRemove={onRemove}
+          countCartItems={cartItems.length}
+          cartItems={cartItems} />} />
       </Routes>
       <Footer />
+      <NotificationContainer />
     </Router>
   );
 }

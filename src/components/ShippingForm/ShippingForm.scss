@@ -1,0 +1,77 @@
+
+.shippingMain{
+    background-color: rgb(255, 255, 255);
+}
+.cartHeader2{
+    text-align: center;
+    padding-top: 10%;
+}
+.cartHeaderEmpty2 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 15% 0;
+}
+.shippingItemInfo{
+    width: 30%;
+    margin: 5% 0 0 10%;
+}
+.shippingInfo{
+    display: flex;
+}
+.productName2 {
+    padding: 1%;
+    margin: 1% 0 0 5% !important;
+    background-color: rgba(191, 191, 191, 0.266);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.164);
+}
+.qntBtn2 {
+    padding-top: 3%;
+    margin-right: 8%;
+    display: flex;
+}
+.qntBtnMinus2 {
+    background-color: rgba(187, 82, 82, 0.649);
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+    margin-right: 5px;
+}
+.qntBtnPlus2 {
+    background-color: rgba(203, 203, 203, 0.649);
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+.productPrice2 {
+    padding-top: 3%;
+}
+.itemPrice2 {
+    margin-left: 2% !important;
+    font-size: 17px;
+    padding-bottom: 1%;
+}
+.itemPriceAmount2 {
+    margin-left: 2% !important;
+    font-size: 25px;
+    padding-bottom: 5%;
+    text-decoration: underline;
+}
+.buyBtn2 {
+    background-color: rgba(208, 84, 17, 0.84) !important;
+    width: 30%;
+    margin: -2% 0 3% 63%;
+    padding: 2%;
+    border: none;
+    border-radius: 6px;
+    color: white;
+}
+.buyBtn2:hover {
+    background-color: rgba(208, 84, 17, 0.992) !important;
+}
+.shippingForm{
+    width: 50%;
+    padding:5% 0% 0 15%;
+}

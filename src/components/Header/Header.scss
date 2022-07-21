@@ -1,29 +1,68 @@
-.navigation{
-    background-color: #77b1a3;
+.navigation {
+    background-color: #77b1a3f3;
     position: fixed;
     width: 100%;
     z-index: 999;
     top: 0;
-    
 }
-.logo{
+.logo {
     width: 130px;
     cursor: pointer;
-    margin: 15px 200px;
+    margin: 15px 350px;
 }
-.cartBtn{
+@media only screen and (max-width: 1550px) {
+    .logo {
+        width: 130px;
+        cursor: pointer;
+        margin: 15px 200px;
+    }
+}
+.cartBtn {
     border: none;
     background-color: rgba(107, 107, 107, 0);
-    font-size: 20px;
+    font-size: 23px;
     float: right;
-    margin: 15px 16% 20px 0;
+    margin: 12px 18% 20px 0;
     color: white;
 }
-.cartBtn:hover{
-    background-color: #beccbf;
-    border-radius: 50%;
-    padding: 7px 13px 7px 13px;
-    transition: 0.3s;
+@media only screen and (max-width: 1550px) {
+    .cartBtn {
+        border: none;
+        background-color: rgba(107, 107, 107, 0);
+        font-size: 23px;
+        float: right;
+        margin: 15px 13% 20px 0;
+        color: white;
+    }
+}
+.cartBtn:hover {
+    color: #beccbf;
+}
+@media only screen and (max-width: 1550px) {
+    .userBtn {
+        text-decoration: none;
+        color: white;
+        float: right;
+        margin: 5px 2% 20px 0;
+        font-size: 30px;
+    }
+}
+.userBtn {
+    text-decoration: none;
+    color: white;
+    float: right;
+    margin: 5px 2% 20px 0;
+    font-size: 30px;
+}
+.userBtn:hover {
+    cursor: pointer;
+    color: #beccbf;
+}
+.userBtnText {
+    float: right;
+    font-size: 15px;
+    margin: 13px 0 0 10px;
+    line-height: 15px;
 }
 .cartCloseBtn {
     margin: 2% 2% 2% 90% !important;
@@ -70,7 +109,7 @@
 }
 .itemPrice {
     margin-left: 2% !important;
-    font-size: 17px ;
+    font-size: 17px;
     padding-bottom: 1%;
 }
 .itemPriceAmount {
@@ -79,7 +118,7 @@
     padding-bottom: 5%;
     text-decoration: underline;
 }
-.buyBtn{
+.buyBtn {
     background-color: rgba(208, 84, 17, 0.84) !important;
     width: 30%;
     margin: -2% 0 3% 63%;
@@ -88,6 +127,6 @@
     border-radius: 6px;
     color: white;
 }
-.buyBtn:hover{
+.buyBtn:hover {
     background-color: rgba(208, 84, 17, 0.992) !important;
 }

@@ -22,7 +22,7 @@ const Footer = () => {
                     </section>
                 </div>
                 <div class="text-center p-3">
-                    COPYRIGHT © TELTONIKA, 2022
+                    COPYRIGHT © RESISTORE, 2022
                 </div>
             </footer>
         </>
