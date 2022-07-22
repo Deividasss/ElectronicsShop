@@ -13,10 +13,9 @@ And then
 ## What you will find in this project
 
 ### - Main Page
-### - Send Us Message (Can be found at Main Page last section)
-### - Create New User Page
-### - Create New Category Page
-### - Users Info page where You can filter all registered users by citys in which they live
+### - Goods Page
+### - Shipping Cart
+### - Shipping Info Page
 
 ## Live DEMO
 
