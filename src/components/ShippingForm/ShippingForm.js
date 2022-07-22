@@ -1,6 +1,6 @@
 import "../ShippingForm/ShippingForm.scss"
 import { useState } from "react";
-import { Form, Card, Button, Modal } from "react-bootstrap"
+import { Button, Modal, Alert } from "react-bootstrap"
 
 const ShippingForm = (props) => {
 
@@ -9,6 +9,7 @@ const ShippingForm = (props) => {
     const shippingPrice = itemsPrice > 5000 ? 0 : 20;
     const totalPrice = itemsPrice + shippingPrice;
     const [thanks, setThanks] = useState(false)
+    const [messages, setMessages] = useState({ message: '', status: '' })
     const [term, setTerm] = useState({
         'FirstName': '',
         'LastName': '',
@@ -16,6 +17,7 @@ const ShippingForm = (props) => {
         'City': '',
         'Address': '',
         'Postal code': '',
+        'Paying info': '',
         'Addintional info': '',
     })
 
@@ -25,24 +27,23 @@ const ShippingForm = (props) => {
             [e.target.name]: e.target.value
         })
     }
-
     const submitHandler = (e) => {
         e.preventDefault()
         e.target.reset()
         console.log(term)
+        setMessages({ message: 'UŽSAKYTA', status: 'success' })
+        setThanks(true)
     }
     const hideModal = () => {
         setThanks(false)
-    }
-    const openModal = () => {
-        setThanks(true)
     }
 
     return (
         <>
             <div className="container">
                 <div className="shippingMain">
-                    <h2 className='cartHeader2'>----------Apmokėjimas----------</h2>
+                    <h2 className='cartHeader2'>------------ | ResiStore | ------------</h2>
+                    <h3 className="shippingHeader">---------- Užsakymo pateikimas ----------</h3>
                     <div className="shippingInfo">
                         <div className="shippingForm">
                             <div class="card-body">
@@ -92,7 +93,7 @@ const ShippingForm = (props) => {
                                             onChange={handleChange}
                                             required
                                         >
-                                            <option>-</option>
+                                            <option value=""></option>
                                             <option>Vilnius</option>
                                             <option>Kaunas</option>
                                             <option>Klaipėda</option>
@@ -107,7 +108,6 @@ const ShippingForm = (props) => {
                                         </select>
                                         <label class="form-label" for="form7Example4">Miestas</label>
                                     </div>
-
                                     <div class="form-outline mb-4">
                                         <input
                                             type="text"
@@ -129,7 +129,20 @@ const ShippingForm = (props) => {
                                         />
                                         <label class="form-label" for="form7Example6">Pašto kodas</label>
                                     </div>
-
+                                    <div class="form-outline mb-4">
+                                        <select
+                                            type="text"
+                                            class="form-control"
+                                            name="Paying info"
+                                            onChange={handleChange}
+                                            required
+                                        >
+                                            <option value=""></option>
+                                            <option>Banko kortele</option>
+                                            <option>Grynais/Atsiimant prekę</option>
+                                        </select>
+                                        <label class="form-label" for="form7Example4">Atsisakitymo būdas</label>
+                                    </div>
                                     <div class="form-outline mb-4">
                                         <textarea
                                             class="form-control"
@@ -141,13 +154,14 @@ const ShippingForm = (props) => {
                                         <label class="form-label" for="form7Example7">Papildoma informacija</label>
                                     </div>
                                     <div>
-                                        <button onClick={()=>{openModal()}} type="submit">PIRKTI</button>
+                                        <button className="buyBtn3" type="submit" >PIRKTI</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <div className="shippingItemInfo">
                             <hr></hr>
+                            <Alert className="shippingAlert" variant={messages.status}>{messages.message}</Alert>
                             {cartItems.length === 0 && <div className='cartHeaderEmpty2'>|Prekių Krepšelis tusčias|</div>}
                             {cartItems.map((item) => (
                                 <div key={item.id} className="row">
@@ -196,17 +210,29 @@ const ShippingForm = (props) => {
             {term.length !== 0 && (
                 <Modal show={thanks} aria-labelledby="contained-modal-title-vcenter"
                     centered>
-                    <h1>{props.firstName}</h1>
                     <Button
                         type="button"
                         className="btn-close"
                         data-dismiss="modal"
                         aria-label="Close"
-                        onClick={hideModal}
-                        variant='danger'
-                        style={{ float: 'right' }}
+                        onClick={() => { hideModal() }}
+                        variant='none'
                     >
                     </Button>
+                    <div className="modalMain">
+                        <h1 className="modalHeader">---- Ačiū, kad pirkote! ----</h1>
+                        <hr></hr>
+                        <h2 className="modalInfo">Jūsų užsakymas:</h2>
+                        {cartItems.map((item) => (
+                            <div key={item.id} className="row">
+                                <div className="productsInfo">
+                                    <div className="col-7 productName3">{item.name}</div>
+                                </div>
+                            </div>
+                        ))}
+                        <hr></hr>
+                        <p className="copyright">COPYRIGHT © RESISTORE, 2022</p>
+                    </div>
                 </Modal>
             )}
         </>
