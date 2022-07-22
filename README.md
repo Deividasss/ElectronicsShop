@@ -14,7 +14,7 @@ And then
 
 ### - Main Page
 ### - Goods Page
-### - Shipping Cart
+### - Shopping Cart
 ### - Shipping Info Page
 
 ## Live DEMO
